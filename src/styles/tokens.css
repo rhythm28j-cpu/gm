@@ -1,0 +1,76 @@
+:root,
+[data-theme="light"] {
+  /* Brand palette */
+  --color-pepperoni-red: #7d2520;
+  --color-firebrick-oven: #a53726;
+  --color-orbital-blue: #1c3144;
+  --color-crust: #fae6a3;
+  --color-starlight: #fcfbf8;
+
+  /* Semantic tokens — light */
+  --token-background: var(--color-starlight);
+  --token-foreground: var(--color-orbital-blue);
+  --token-primary: var(--color-pepperoni-red);
+  --token-primary-hover: var(--color-firebrick-oven);
+  --token-accent: var(--color-crust);
+  --token-muted: #4a6278;
+  --token-border: #e8dfc8;
+
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+
+  /* Layout */
+  --layout-content-max: calc(var(--spacing-24) * 7);
+
+  /* Typography */
+  --font-family-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+}
+
+[data-theme="dark"] {
+  --token-background: var(--color-orbital-blue);
+  --token-foreground: var(--color-starlight);
+  --token-primary: var(--color-firebrick-oven);
+  --token-primary-hover: var(--color-pepperoni-red);
+  --token-accent: #2a4158;
+  --token-muted: #b8c5d0;
+  --token-border: #2f4559;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --token-background: var(--color-orbital-blue);
+    --token-foreground: var(--color-starlight);
+    --token-primary: var(--color-firebrick-oven);
+    --token-primary-hover: var(--color-pepperoni-red);
+    --token-accent: #2a4158;
+    --token-muted: #b8c5d0;
+    --token-border: #2f4559;
+  }
+}

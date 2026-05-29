@@ -1,26 +1,24 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "../styles/tokens.css";
+@import "../styles/foundation.css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Brand palette */
+  --color-pepperoni-red: var(--color-pepperoni-red);
+  --color-firebrick-oven: var(--color-firebrick-oven);
+  --color-orbital-blue: var(--color-orbital-blue);
+  --color-crust: var(--color-crust);
+  --color-starlight: var(--color-starlight);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Semantic colors */
+  --color-background: var(--token-background);
+  --color-foreground: var(--token-foreground);
+  --color-primary: var(--token-primary);
+  --color-primary-hover: var(--token-primary-hover);
+  --color-accent: var(--token-accent);
+  --color-muted: var(--token-muted);
+  --color-border: var(--token-border);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  /* Typography */
+  --font-sans: var(--font-family-sans);
 }
