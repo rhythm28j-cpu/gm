@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--color-orbital-blue);
+  color: var(--token-foreground);
+}

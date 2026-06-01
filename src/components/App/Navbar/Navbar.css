@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  padding-block: var(--spacing-4);
+  padding-inline: var(--spacing-6);
+  background-color: color-mix(
+    in srgb,
+    var(--color-orbital-blue) 88%,
+    var(--color-pepperoni-red)
+  );
+  border-bottom: var(--border-width) solid var(--token-border);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  text-decoration: none;
+  color: var(--token-foreground);
+}
+
+.navbar__logo {
+  width: var(--spacing-12);
+  height: var(--spacing-12);
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
+.navbar__brand-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.02em;
+}
+
+.navbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+}
+
+.navbar__nav .button--ghost {
+  color: var(--token-nav-link);
+}
+
+.navbar__nav .button--ghost:hover:not(:disabled) {
+  color: var(--token-nav-link-hover);
+  background-color: color-mix(
+    in srgb,
+    var(--token-accent) 65%,
+    transparent
+  );
+}

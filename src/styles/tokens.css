@@ -15,6 +15,8 @@
   --token-accent: var(--color-crust);
   --token-muted: #4a6278;
   --token-border: #e8dfc8;
+  --token-nav-link: var(--color-orbital-blue);
+  --token-nav-link-hover: var(--color-pepperoni-red);
 
   /* Spacing */
   --spacing-0: 0;
@@ -32,7 +34,19 @@
   --spacing-24: 6rem;
 
   /* Layout */
-  --layout-content-max: calc(var(--spacing-24) * 7);
+  --layout-content-max: 75rem;
+  --layout-hero-visual: calc(var(--spacing-24) * 6);
+
+  /* Radius */
+  --radius-sm: var(--spacing-1);
+  --radius-md: var(--spacing-2);
+  --radius-lg: var(--spacing-3);
+
+  /* Component semantics */
+  --token-on-primary: var(--color-starlight);
+  --border-width: 1px;
+  --duration-fast: 150ms;
+  --easing-default: ease;
 
   /* Typography */
   --font-family-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -44,6 +58,8 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -61,6 +77,8 @@
   --token-accent: #2a4158;
   --token-muted: #b8c5d0;
   --token-border: #2f4559;
+  --token-nav-link: var(--color-starlight);
+  --token-nav-link-hover: var(--color-crust);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,5 +90,7 @@
     --token-accent: #2a4158;
     --token-muted: #b8c5d0;
     --token-border: #2f4559;
+    --token-nav-link: var(--color-starlight);
+    --token-nav-link-hover: var(--color-crust);
   }
 }

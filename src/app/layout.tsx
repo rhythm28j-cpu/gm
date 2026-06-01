@@ -9,8 +9,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Gamma Interview",
-  description: "Gamma interview take home assignment",
+  title: "Pepperoni Planet",
+  description: "Order pizza from across the galaxy",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
       </body>
     </html>
   );

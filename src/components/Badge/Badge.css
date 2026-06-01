@@ -1,0 +1,26 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--spacing-1);
+  padding-inline: var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+.badge--default {
+  background-color: var(--token-accent);
+  color: var(--token-foreground);
+}
+
+.badge--primary {
+  background-color: var(--token-primary);
+  color: var(--token-on-primary);
+}
+
+.badge--accent {
+  background-color: var(--token-accent);
+  color: var(--token-foreground);
+}
