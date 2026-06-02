@@ -2,6 +2,9 @@
 @import "./Card/Card.css";
 @import "./Input/Input.css";
 @import "./Badge/Badge.css";
+@import "./Modal/Modal.css";
 @import "./App/App.css";
 @import "./App/Navbar/Navbar.css";
 @import "./App/Hero/Hero.css";
+@import "./App/PizzaBuilder/PizzaBuilder.css";
+@import "./App/PizzaBuilder/CustomizeModal.css";
