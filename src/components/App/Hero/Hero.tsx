@@ -49,7 +49,6 @@ export default function Hero() {
 
         <div className="hero__visual" aria-hidden="true">
           <div className="hero__diamond">
-            <div className="hero__diamond-beam" />
             <div className="hero__diamond-glow" />
             <div className="hero__diamond-frame">
               <Image

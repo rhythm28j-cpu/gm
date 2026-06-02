@@ -1,12 +1,18 @@
+@keyframes hero-diamond-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .hero {
   position: relative;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding-block: var(--spacing-16);
-  padding-inline: var(--spacing-6);
+  width: 100%;
   overflow: hidden;
+  background-color: var(--color-orbital-blue);
 }
 
 .hero__atmosphere {
@@ -15,18 +21,13 @@
   background:
     radial-gradient(
       ellipse at 15% 50%,
-      color-mix(in srgb, var(--color-firebrick-oven) 28%, transparent) 0%,
+      color-mix(in srgb, var(--color-firebrick-oven) 20%, transparent) 0%,
       transparent 50%
     ),
     radial-gradient(
       ellipse at 85% 40%,
-      color-mix(in srgb, var(--color-crust) 18%, transparent) 0%,
+      color-mix(in srgb, var(--color-crust) 12%, transparent) 0%,
       transparent 45%
-    ),
-    linear-gradient(
-      160deg,
-      var(--color-orbital-blue) 0%,
-      color-mix(in srgb, var(--color-orbital-blue) 70%, var(--color-pepperoni-red)) 100%
     );
   pointer-events: none;
 }
@@ -40,12 +41,15 @@
   align-items: center;
   width: 100%;
   max-width: var(--layout-content-max);
+  margin-inline: auto;
+  padding-block: var(--spacing-6);
+  padding-inline: var(--spacing-6);
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4);
   max-width: calc(var(--spacing-24) * 6);
 }
 
@@ -128,33 +132,24 @@
   );
 }
 
-/* Diamond pizza visual */
+/* Rotating diamond */
 .hero__visual {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--layout-hero-visual);
 }
 
 .hero__diamond {
   position: relative;
   width: min(var(--layout-hero-visual), 100%);
   aspect-ratio: 1;
+  animation: hero-diamond-spin var(--duration-rotate) linear infinite;
 }
 
-.hero__diamond-beam {
-  position: absolute;
-  top: calc(var(--spacing-8) * -1);
-  right: calc(var(--spacing-4) * -1);
-  width: 70%;
-  height: 120%;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-crust) 55%, transparent) 0%,
-    transparent 70%
-  );
-  transform: rotate(-12deg);
-  pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  .hero__diamond {
+    animation: none;
+  }
 }
 
 .hero__diamond-glow {
@@ -162,8 +157,8 @@
   inset: calc(var(--spacing-4) * -1);
   background: radial-gradient(
     circle at 60% 40%,
-    color-mix(in srgb, var(--color-firebrick-oven) 50%, transparent) 0%,
-    color-mix(in srgb, var(--color-crust) 25%, transparent) 35%,
+    color-mix(in srgb, var(--color-firebrick-oven) 45%, transparent) 0%,
+    color-mix(in srgb, var(--color-crust) 22%, transparent) 35%,
     transparent 70%
   );
   pointer-events: none;
@@ -177,7 +172,7 @@
   transform: rotate(45deg);
   border-radius: var(--radius-lg);
   border: var(--border-width) solid
-    color-mix(in srgb, var(--color-crust) 30%, transparent);
+    color-mix(in srgb, var(--color-crust) 35%, transparent);
   box-shadow:
     0 var(--spacing-8) var(--spacing-16)
       color-mix(in srgb, var(--color-orbital-blue) 60%, transparent),
@@ -186,11 +181,11 @@
 }
 
 .hero__diamond-image {
-  width: 145%;
-  height: 145%;
+  width: 118%;
+  height: 118%;
   object-fit: cover;
-  transform: rotate(-45deg) translateY(-8%);
-  margin: -22%;
+  transform: rotate(-45deg) translateY(-4%);
+  margin: -9%;
 }
 
 .hero__sparkles {
@@ -200,6 +195,13 @@
   padding: 0;
   list-style: none;
   pointer-events: none;
+  animation: hero-diamond-spin var(--duration-rotate) linear infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__sparkles {
+    animation: none;
+  }
 }
 
 .hero__sparkle {

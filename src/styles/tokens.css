@@ -46,6 +46,7 @@
   --token-on-primary: var(--color-starlight);
   --border-width: 1px;
   --duration-fast: 150ms;
+  --duration-rotate: 28s;
   --easing-default: ease;
 
   /* Typography */
