@@ -20,6 +20,7 @@
   --token-overlay: color-mix(in srgb, var(--color-orbital-blue) 50%, transparent);
   --token-surface-subtle: color-mix(in srgb, var(--color-starlight) 6%, var(--token-accent));
   --token-surface-selected: color-mix(in srgb, var(--color-crust) 18%, var(--token-accent));
+  --token-surface-deep: color-mix(in srgb, black 35%, var(--color-orbital-blue));
 
   /* Spacing */
   --spacing-0: 0;
@@ -86,6 +87,7 @@
   --token-overlay: color-mix(in srgb, var(--color-orbital-blue) 72%, transparent);
   --token-surface-subtle: color-mix(in srgb, var(--color-starlight) 8%, var(--token-accent));
   --token-surface-selected: color-mix(in srgb, var(--color-crust) 22%, var(--token-accent));
+  --token-surface-deep: color-mix(in srgb, black 35%, var(--color-orbital-blue));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -102,5 +104,6 @@
     --token-overlay: color-mix(in srgb, var(--color-orbital-blue) 72%, transparent);
     --token-surface-subtle: color-mix(in srgb, var(--color-starlight) 8%, var(--token-accent));
     --token-surface-selected: color-mix(in srgb, var(--color-crust) 22%, var(--token-accent));
+    --token-surface-deep: color-mix(in srgb, black 35%, var(--color-orbital-blue));
   }
 }
