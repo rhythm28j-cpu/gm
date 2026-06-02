@@ -1,0 +1,184 @@
+.stellar-savings {
+  width: 100%;
+  padding-block: var(--spacing-10);
+  padding-inline: var(--spacing-6);
+  background-color: var(--color-orbital-blue);
+}
+
+.stellar-savings__header {
+  width: 100%;
+  max-width: var(--layout-content-max);
+  margin-inline: auto;
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+}
+
+.stellar-savings__title {
+  margin: 0;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-crust);
+}
+
+.stellar-savings__subtitle {
+  margin: var(--spacing-3) auto 0;
+  max-width: calc(var(--spacing-24) * 6);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--token-muted);
+}
+
+.stellar-savings__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--spacing-24) * 4)), 1fr));
+  gap: var(--spacing-5);
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--layout-content-max);
+  margin-inline: auto;
+}
+
+.stellar-savings__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: color-mix(
+    in srgb,
+    var(--token-accent) 85%,
+    var(--color-orbital-blue)
+  );
+  border-color: var(--token-border);
+  transition:
+    border-color var(--duration-fast) var(--easing-default),
+    box-shadow var(--duration-fast) var(--easing-default);
+}
+
+.stellar-savings__card:hover,
+.stellar-savings__card:focus-within {
+  border-color: var(--color-crust);
+  box-shadow: 0 0 var(--spacing-6)
+    color-mix(in srgb, var(--color-crust) 25%, transparent);
+}
+
+.stellar-savings__image-wrap {
+  position: relative;
+  height: calc(var(--spacing-24) * 2.25);
+  overflow: hidden;
+}
+
+.stellar-savings__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stellar-savings__badge {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  padding-block: var(--spacing-1);
+  padding-inline: var(--spacing-3);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: var(--color-crust);
+  color: var(--color-orbital-blue);
+}
+
+.stellar-savings__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-5);
+}
+
+.stellar-savings__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+}
+
+.stellar-savings__deal-title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--token-foreground);
+}
+
+.stellar-savings__price {
+  flex-shrink: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-crust);
+}
+
+.stellar-savings__description {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--token-muted);
+}
+
+.stellar-savings__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stellar-savings__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--token-foreground);
+}
+
+.stellar-savings__feature::before {
+  content: "✓";
+  flex-shrink: 0;
+  color: var(--token-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.stellar-savings__cta {
+  width: 100%;
+  margin-top: auto;
+  color: var(--token-foreground);
+  border: var(--border-width) solid
+    color-mix(in srgb, var(--token-foreground) 30%, transparent);
+  background-color: transparent;
+  transition:
+    background-color var(--duration-fast) var(--easing-default),
+    border-color var(--duration-fast) var(--easing-default),
+    color var(--duration-fast) var(--easing-default);
+}
+
+.stellar-savings__card:hover .stellar-savings__cta,
+.stellar-savings__card:focus-within .stellar-savings__cta,
+.stellar-savings__cta:hover:not(:disabled) {
+  background-color: var(--color-crust);
+  border-color: var(--color-crust);
+  color: var(--color-orbital-blue);
+}
+
+.stellar-savings__card:hover .stellar-savings__cta:hover:not(:disabled),
+.stellar-savings__card:focus-within .stellar-savings__cta:hover:not(:disabled) {
+  background-color: color-mix(
+    in srgb,
+    var(--color-crust) 88%,
+    var(--color-starlight)
+  );
+}
