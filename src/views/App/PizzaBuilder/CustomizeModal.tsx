@@ -21,8 +21,6 @@ import {
 } from "./pizzaOptions";
 import "./CustomizeModal.css";
 
-export type { CustomizeSelections };
-
 type CustomizeModalProps = {
   isOpen: boolean;
   selections: CustomizeSelections;
@@ -49,11 +47,11 @@ export default function CustomizeModal({
   const totalPrice = calculatePizzaPrice(selections);
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Expand Your Orbit">
+    <Modal isOpen={isOpen} onClose={onClose} title="Customize Your Pizza">
       <div className="customize-modal">
         <section className="customize-modal__section" aria-labelledby="modal-crust-heading">
           <h3 id="modal-crust-heading" className="customize-modal__heading">
-            Core Crust
+            Choose Your Crust
           </h3>
           <fieldset className="customize-modal__crust-group">
             <legend className="customize-modal__sr-only">Choose a crust</legend>
@@ -84,7 +82,7 @@ export default function CustomizeModal({
 
         <section className="customize-modal__section" aria-labelledby="modal-sauce-heading">
           <h3 id="modal-sauce-heading" className="customize-modal__heading">
-            Plasma Sauce
+            Choose Your Sauce
           </h3>
           <div
             className="customize-modal__sauce-grid"
@@ -117,7 +115,7 @@ export default function CustomizeModal({
           aria-labelledby="modal-toppings-heading"
         >
           <h3 id="modal-toppings-heading" className="customize-modal__heading">
-            Asteroid Toppings
+            Choose Toppings
           </h3>
           <div
             className="customize-modal__toppings"

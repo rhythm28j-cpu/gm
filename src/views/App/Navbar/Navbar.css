@@ -40,6 +40,11 @@
   gap: var(--spacing-2);
 }
 
+.navbar__nav .button--ghost,
+.navbar__nav .button--primary {
+  text-decoration: none;
+}
+
 .navbar__nav .button--ghost {
   color: var(--token-nav-link);
 }

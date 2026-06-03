@@ -8,20 +8,27 @@ const height = 533;
 
 /** @type {Record<string, { source: string; fit?: "cover" | "contain" }>} */
 const conversions = {
-  "giant-pepperoni.avif": { source: "xoFjmQ-4faF-Y1Rg.png", fit: "contain" },
-  "moon-dust-cheese.avif": { source: "YOj2xZUYEqyOKqFC.png", fit: "contain" },
-  "black-hole-olives.avif": { source: "bLqEd2lHgA8x6hLq.png", fit: "contain" },
-  "solar-jalapenos.avif": { source: "JMu4ed-AdASw4rIE.png", fit: "contain" },
-  "cosmic-mushrooms.avif": { source: "Ten1QJ61yCLtbZU_.png", fit: "contain" },
-  "orbital-pineapple.avif": { source: "-QMcNz7OBwoYsUaq.png", fit: "contain" },
-  "bacon-meteor.avif": { source: "VgOI_vI_Om-sUT_6.png", fit: "contain" },
-  "star-bell-peppers.avif": { source: "0DYbVwr14W24DdPL.png", fit: "contain" },
-  "nebula-onions.avif": { source: "VJ5r2a4ML_3LMoKm.png", fit: "contain" },
-  "fresh-space-basil.avif": { source: "AXeDM8ZNYZfEcw9c.png", fit: "contain" },
-  "roasted-broccoli.avif": { source: "tFmt2Z4imBoWjAbS.png", fit: "contain" },
-  "tomatoes.avif": { source: "U57gdH9Fw5fNM0iW.png", fit: "contain" },
-  "artichokes.avif": { source: "cejI4o07ZlwiCv_L.png", fit: "contain" },
+  "giant-pepperoni.avif": { source: "giant-pepperoni.png", fit: "contain" },
+  "moon-dust-cheese.avif": { source: "moon-dust-cheese.png", fit: "contain" },
+  "black-hole-olives.avif": { source: "black-hole-olives.png", fit: "contain" },
+  "solar-jalapenos.avif": { source: "solar-jalapenos.png", fit: "contain" },
+  "cosmic-mushrooms.avif": { source: "cosmic-mushrooms.png", fit: "contain" },
+  "orbital-pineapple.avif": { source: "orbital-pineapple.png", fit: "contain" },
+  "bacon-meteor.avif": { source: "bacon-meteor.png", fit: "contain" },
+  "star-bell-peppers.avif": { source: "star-bell-peppers.png", fit: "contain" },
+  "nebula-onions.avif": { source: "nebula-onions.png", fit: "contain" },
+  "fresh-space-basil.avif": { source: "fresh-space-basil.png", fit: "contain" },
+  "roasted-broccoli.avif": { source: "roasted-broccoli.png", fit: "contain" },
+  "tomatoes.avif": { source: "tomatoes.png", fit: "contain" },
+  "artichokes.avif": { source: "artichokes.png", fit: "contain" },
 };
+
+const preservedFiles = new Set([
+  "hero-pizza.jpg",
+  "deal-binary-star.jpg",
+  "deal-solo-explorer.jpg",
+  "toppingImages.ts",
+]);
 
 async function encodeAvif(inputPath, fit) {
   let quality = 52;
@@ -62,37 +69,30 @@ async function main() {
   const tempDir = path.join(assetsDir, ".converted");
   await mkdir(tempDir, { recursive: true });
 
-  const written = new Map();
+  const convertedSources = [];
 
   for (const [outputName, { source, fit = "cover" }] of Object.entries(
     conversions,
   )) {
-    if (written.has(outputName)) {
+    const inputPath = path.join(assetsDir, source);
+
+    try {
+      await stat(inputPath);
+    } catch {
+      console.warn(`Skipping ${outputName}: source ${source} not found`);
       continue;
     }
 
-    const inputPath = path.join(assetsDir, source);
     const outputPath = path.join(tempDir, outputName);
     const { buffer, quality, sizeKb } = await encodeAvif(inputPath, fit);
 
     await sharp(buffer).toFile(outputPath);
-    written.set(outputName, { quality, sizeKb });
+    convertedSources.push(source);
 
     console.log(
       `${outputName}: ${sizeKb.toFixed(1)} KB (quality ${quality})`,
     );
   }
-
-  const sourcesToRemove = new Set([
-    ...Object.values(conversions).map(({ source }) => source),
-    "NtQ5GbxyqENSVZAe.png",
-  ]);
-
-  const preservedSources = new Set([
-    "hero-pizza.jpg",
-    "deal-binary-star.jpg",
-    "deal-solo-explorer.jpg",
-  ]);
 
   for (const file of await readdir(assetsDir)) {
     if (file === ".converted") {
@@ -105,11 +105,11 @@ async function main() {
       continue;
     }
 
-    if (preservedSources.has(file)) {
+    if (preservedFiles.has(file)) {
       continue;
     }
 
-    if (sourcesToRemove.has(file) || file.endsWith(".jpg") || file.endsWith(".png")) {
+    if (convertedSources.includes(file)) {
       await rm(filePath);
     }
   }

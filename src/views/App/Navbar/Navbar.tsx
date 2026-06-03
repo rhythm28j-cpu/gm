@@ -2,11 +2,12 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import logo from "@/app/logo.svg";
 
-const NAV_ITEMS = [
-  { label: "Galactic Menu", variant: "ghost" as const },
-  { label: "Launch Tracker", variant: "ghost" as const },
-  { label: "Beam to Cart", variant: "primary" as const },
-];
+const NAV_LINKS = [
+  { label: "Mission", href: "#our-story" },
+  { label: "Menu", href: "#menu" },
+  { label: "Deals", href: "#stellar-savings" },
+  { label: "Order", href: "#menu" },
+] as const;
 
 export default function Navbar() {
   return (
@@ -18,17 +19,23 @@ export default function Navbar() {
           alt="Pepperoni Planet logo"
           width={48}
           height={48}
-          priority
         />
         <span className="navbar__brand-name">Pepperoni Planet</span>
       </a>
 
       <nav className="navbar__nav" aria-label="Main navigation">
-        {NAV_ITEMS.map(({ label, variant }) => (
-          <Button key={label} variant={variant} size="sm">
+        {NAV_LINKS.map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            className="button button--ghost button--sm"
+          >
             {label}
-          </Button>
+          </a>
         ))}
+        <Button variant="primary" size="sm">
+          View Cart
+        </Button>
       </nav>
     </header>
   );

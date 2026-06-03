@@ -1,7 +1,6 @@
 import Image from "next/image";
 import logo from "@/app/logo.svg";
 import SocialIcon from "./SocialIcons";
-import "./Footer.css";
 
 const FOOTER_LINKS = [
   {
@@ -15,9 +14,9 @@ const FOOTER_LINKS = [
   {
     title: "Support",
     links: [
-      { label: "Galactic Support", href: "#" },
+      { label: "Customer Support", href: "#" },
       { label: "Track Order", href: "#" },
-      { label: "Safety Protocols", href: "#" },
+      { label: "Food Safety", href: "#" },
     ],
   },
   {
@@ -76,7 +75,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © 2024 Pepperoni Planet. All systems go.
+            © 2024 Pepperoni Planet. All rights reserved.
           </p>
           <div className="footer__social" role="list">
             {SOCIAL_LINKS.map((item) => (

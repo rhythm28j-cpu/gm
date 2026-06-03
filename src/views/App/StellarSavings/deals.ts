@@ -19,10 +19,10 @@ export type Deal = {
 export const DEALS: Deal[] = [
   {
     id: "binary-star",
-    title: "Binary Star Bundle",
+    title: "Date Night Duo",
     price: "$24.99",
     description:
-      "Two large 3-topping pizzas plus a 2-liter Nebula Nectar. Perfect for pairs.",
+      "Two large 3-topping pizzas plus a 2-liter soda. Perfect for sharing.",
     features: ["2 Large Pizzas", "Any 3 Toppings", "Drinks Included"],
     cta: "Claim Offer",
     imageSrc: dealBinaryStar,
@@ -30,12 +30,12 @@ export const DEALS: Deal[] = [
   },
   {
     id: "supernova",
-    title: "Supernova Party Box",
+    title: "Party Pack",
     price: "$42.00",
     description:
-      "Feeds a whole crew. 3 pizzas, 2 sides, and 4 drinks. Total fuel saturation.",
-    features: ["3 Family Pizzas", "Garlic Stardust Knots", "Ultimate Value"],
-    cta: "Fuel the Crew",
+      "Feeds the whole group. 3 pizzas, 2 sides, and 4 drinks. Our best value.",
+    features: ["3 Family Pizzas", "Garlic Knots", "Ultimate Value"],
+    cta: "Order Party Pack",
     featured: true,
     badge: "Most Popular",
     imageSrc: heroPizza,
@@ -43,14 +43,14 @@ export const DEALS: Deal[] = [
   },
   {
     id: "solo-explorer",
-    title: "Solo Explorer",
+    title: "Solo Slice",
     price: "$12.99",
     description:
-      "Medium specialty pizza for the lone voyager. Perfect for light exploration.",
+      "One medium specialty pizza when you're dining alone. Quick and satisfying.",
     features: [
       "1 Medium Specialty",
-      "Rapid Deployment",
-      "Single Voyager Size",
+      "Ready Fast",
+      "Perfect for One",
     ],
     cta: "Claim Offer",
     imageSrc: dealSoloExplorer,

@@ -3,7 +3,6 @@ import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import { DEALS, type Deal } from "./deals";
-import "./StellarSavings.css";
 
 type DealCardProps = {
   deal: Deal;
@@ -17,9 +16,10 @@ function DealCard({ deal }: DealCardProps) {
           className="stellar-savings__image"
           src={deal.imageSrc}
           alt={deal.imageAlt}
-          width={600}
-          height={400}
+          width={400}
+          height={267}
           sizes="(max-width: 768px) 100vw, 33vw"
+          loading="lazy"
         />
         {deal.badge && (
           <Badge variant="primary" className="stellar-savings__badge">
@@ -54,14 +54,13 @@ function DealCard({ deal }: DealCardProps) {
 
 export default function StellarSavings() {
   return (
-    <section className="stellar-savings" aria-labelledby="stellar-savings-heading">
+    <section id="stellar-savings" className="stellar-savings" aria-labelledby="stellar-savings-heading">
       <header className="stellar-savings__header">
         <h2 id="stellar-savings-heading" className="stellar-savings__title">
-          Stellar Savings
+          Deals & Specials
         </h2>
         <p className="stellar-savings__subtitle">
-          Economic efficiency for the intergalactic explorer. High-value bundles
-          for your next celestial gathering.
+          Great bundles for date night, parties, or a quick meal on your own.
         </p>
       </header>
 

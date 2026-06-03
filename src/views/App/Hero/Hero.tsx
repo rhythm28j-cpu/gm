@@ -4,15 +4,15 @@ import Button from "@/components/Button";
 import heroPizza from "@/assets/hero-pizza.jpg";
 
 const HERO_CONTENT = {
-  badge: "Limited time trajectory",
+  badge: "Limited time offer",
   titleLead: "The",
-  titleHighlight: "Galactic Feast",
-  titleTrail: "Has Landed.",
+  titleHighlight: "Perfect Pie",
+  titleTrail: "Is Here.",
   description:
-    "Orbiting your hunger with our signature hand-tossed crust, asteroid-sized pepperonis, and starlight-quality ingredients.",
-  dealNote: "Orbit Combo launch special — $24.99",
-  primaryCta: "Blast Off",
-  secondaryCta: "View Mission Log",
+    "Hand-tossed crust, generous pepperoni, and fresh ingredients — pizza the way it should be.",
+  dealNote: "Combo special — $24.99",
+  primaryCta: "Order Now",
+  secondaryCta: "Our Story",
 };
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="hero__inner">
         <div className="hero__content">
           <Badge variant="primary" className="hero__badge">
-            <span aria-hidden="true">🚀</span> {HERO_CONTENT.badge}
+            <span aria-hidden="true">🍕</span> {HERO_CONTENT.badge}
           </Badge>
 
           <h1 id="hero-heading" className="hero__heading">
@@ -58,6 +58,7 @@ export default function Hero() {
                 alt=""
                 width={900}
                 height={900}
+                sizes="(max-width: 768px) 90vw, min(36rem, 42vw)"
                 priority
               />
             </div>

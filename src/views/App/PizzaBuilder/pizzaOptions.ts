@@ -1,46 +1,46 @@
 export const CRUST_OPTIONS = [
-  { id: "deep-dish", label: "Meteorite Deep Dish" },
-  { id: "thin-crust", label: "Zero-G Thin Crust" },
-  { id: "star-ring", label: "Cheesy Star-Ring" },
+  { id: "deep-dish", label: "Deep Dish" },
+  { id: "thin-crust", label: "Thin Crust" },
+  { id: "star-ring", label: "Cheesy Stuffed Crust" },
 ] as const;
 
 export const EXTRA_CRUST_OPTIONS = [
-  { id: "gluten-free", label: "Gluten-Free Galaxy" },
-  { id: "stuffed", label: "Stuffed Supernova" },
-  { id: "cauliflower", label: "Cauliflower Comet" },
+  { id: "gluten-free", label: "Gluten-Free" },
+  { id: "stuffed", label: "Stuffed Crust" },
+  { id: "cauliflower", label: "Cauliflower Crust" },
 ] as const;
 
 export const SAUCE_OPTIONS = [
   { id: "red", label: "Traditional Red", icon: "〰" },
-  { id: "spicy", label: "Firebrick Spicy", icon: "✦" },
-  { id: "white", label: "White Nebula", icon: "☁" },
-  { id: "pesto", label: "Pesto Comet", icon: "❧" },
+  { id: "spicy", label: "Spicy Red", icon: "✦" },
+  { id: "white", label: "White Sauce", icon: "☁" },
+  { id: "pesto", label: "Pesto", icon: "❧" },
 ] as const;
 
 export const EXTRA_SAUCE_OPTIONS = [
-  { id: "bbq", label: "BBQ Black Hole", icon: "◉" },
-  { id: "garlic", label: "Garlic Gravity", icon: "◎" },
-  { id: "buffalo", label: "Buffalo Blast", icon: "✹" },
-  { id: "truffle", label: "Truffle Transit", icon: "✧" },
+  { id: "bbq", label: "BBQ", icon: "◉" },
+  { id: "garlic", label: "Garlic", icon: "◎" },
+  { id: "buffalo", label: "Buffalo", icon: "✹" },
+  { id: "truffle", label: "Truffle", icon: "✧" },
 ] as const;
 
 export const TOPPING_OPTIONS = [
-  { id: "pepperoni", label: "Giant Pepperoni" },
-  { id: "cheese", label: "Moon-Dust Cheese" },
-  { id: "olives", label: "Black Hole Olives" },
-  { id: "jalapenos", label: "Solar Jalapeños" },
-  { id: "artichokes", label: "Galactic Artichokes" },
+  { id: "pepperoni", label: "Pepperoni" },
+  { id: "cheese", label: "Extra Cheese" },
+  { id: "olives", label: "Black Olives" },
+  { id: "jalapenos", label: "Jalapeños" },
+  { id: "artichokes", label: "Artichokes" },
 ] as const;
 
 export const EXTRA_TOPPING_OPTIONS = [
-  { id: "mushrooms", label: "Cosmic Mushrooms" },
-  { id: "pineapple", label: "Orbital Pineapple" },
-  { id: "bacon", label: "Bacon Meteor" },
-  { id: "onions", label: "Nebula Onions" },
-  { id: "peppers", label: "Star Bell Peppers" },
+  { id: "mushrooms", label: "Mushrooms" },
+  { id: "pineapple", label: "Pineapple" },
+  { id: "bacon", label: "Bacon" },
+  { id: "onions", label: "Onions" },
+  { id: "peppers", label: "Bell Peppers" },
   { id: "broccoli", label: "Roasted Broccoli" },
-  { id: "basil", label: "Fresh Space Basil" },
-  { id: "tomatoes", label: "Red Dwarf Tomatoes" },
+  { id: "basil", label: "Fresh Basil" },
+  { id: "tomatoes", label: "Tomatoes" },
 ] as const;
 
 export type CrustId =

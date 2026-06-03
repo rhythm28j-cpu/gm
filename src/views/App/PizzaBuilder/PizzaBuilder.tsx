@@ -1,19 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState, type ReactNode } from "react";
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
-import CustomizeModal, { type CustomizeSelections } from "./CustomizeModal";
 import {
   CRUST_OPTIONS,
   SAUCE_OPTIONS,
   TOPPING_OPTIONS,
   type CrustId,
+  type CustomizeSelections,
   type SauceId,
   type ToppingId,
 } from "./pizzaOptions";
-import "./PizzaBuilder.css";
+
+const CustomizeModal = dynamic(() => import("./CustomizeModal"), {
+  ssr: false,
+});
 
 type BuilderStepCardProps = {
   step: number;
@@ -50,7 +54,7 @@ type CrustCardProps = {
 
 function CrustCard({ value, onChange }: CrustCardProps) {
   return (
-    <BuilderStepCard step={1} title="Core Crust">
+    <BuilderStepCard step={1} title="Choose Your Crust">
       <fieldset className="pizza-builder__crust-group">
         <legend className="pizza-builder__sr-only">Choose a crust</legend>
         {CRUST_OPTIONS.map((option) => (
@@ -83,7 +87,7 @@ type SauceCardProps = {
 
 function SauceCard({ value, onChange }: SauceCardProps) {
   return (
-    <BuilderStepCard step={2} title="Plasma Sauce">
+    <BuilderStepCard step={2} title="Choose Your Sauce">
       <div className="pizza-builder__sauce-grid" role="group" aria-label="Choose a sauce">
         {SAUCE_OPTIONS.map((option) => (
           <button
@@ -116,7 +120,7 @@ function ToppingsCard({ selected, onToggle, onAddMore }: ToppingsCardProps) {
   return (
     <BuilderStepCard
       step={3}
-      title="Asteroid Toppings"
+      title="Choose Toppings"
       className="pizza-builder__card--toppings"
     >
       <div className="pizza-builder__toppings" role="group" aria-label="Choose toppings">
@@ -143,7 +147,7 @@ function ToppingsCard({ selected, onToggle, onAddMore }: ToppingsCardProps) {
         </button>
       </div>
       <Button variant="primary" size="md" className="pizza-builder__finalize">
-        Finalize Trajectory
+        Add to Order
       </Button>
     </BuilderStepCard>
   );
@@ -185,13 +189,13 @@ export default function PizzaBuilder() {
   };
 
   return (
-    <section className="pizza-builder" aria-labelledby="pizza-builder-heading">
+    <section id="menu" className="pizza-builder" aria-labelledby="pizza-builder-heading">
       <header className="pizza-builder__header">
         <h2 id="pizza-builder-heading" className="pizza-builder__title">
-          Craft Your Comet
+          Build Your Pizza
         </h2>
         <p className="pizza-builder__subtitle">
-          Engineered exactly how you orbit.
+          Fresh, customizable, and made just for you.
         </p>
         <hr className="pizza-builder__divider" />
       </header>
@@ -206,13 +210,15 @@ export default function PizzaBuilder() {
         />
       </div>
 
-      <CustomizeModal
-        isOpen={isModalOpen}
-        selections={modalSelections}
-        onClose={closeCustomizeModal}
-        onChange={setModalSelections}
-        onAddToCart={handleAddToCart}
-      />
+      {isModalOpen && (
+        <CustomizeModal
+          isOpen={isModalOpen}
+          selections={modalSelections}
+          onClose={closeCustomizeModal}
+          onChange={setModalSelections}
+          onAddToCart={handleAddToCart}
+        />
+      )}
     </section>
   );
 }

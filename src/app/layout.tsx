@@ -6,11 +6,12 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Pepperoni Planet",
-  description: "Order pizza from across the galaxy",
+  description: "Order fresh pizza online from Pepperoni Planet",
 };
 
 export default function RootLayout({
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} h-full`}
+      data-theme="dark"
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
