@@ -286,3 +286,28 @@
 .customize-modal__add-to-cart:hover:not(:disabled) {
   background-color: var(--color-firebrick-oven);
 }
+
+@media (max-width: 47.999rem) {
+  .customize-modal__sauce-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customize-modal__topping-name {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 29.999rem) {
+  .customize-modal__sauce-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customize-modal__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customize-modal__add-to-cart {
+    width: 100%;
+  }
+}

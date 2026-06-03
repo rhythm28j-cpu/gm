@@ -247,3 +247,28 @@
 .pizza-builder__finalize:hover:not(:disabled) {
   background-color: var(--color-firebrick-oven);
 }
+
+@media (max-width: 47.999rem) {
+  .pizza-builder {
+    padding-block: var(--spacing-8);
+    padding-inline: var(--spacing-4);
+  }
+
+  .pizza-builder__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .pizza-builder__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 29.999rem) {
+  .pizza-builder__sauce-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pizza-builder__toppings {
+    justify-content: center;
+  }
+}

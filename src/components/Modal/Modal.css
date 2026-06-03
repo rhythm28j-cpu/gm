@@ -91,3 +91,25 @@
     var(--color-orbital-blue)
   );
 }
+
+@media (max-width: 47.999rem) {
+  .modal {
+    padding: var(--spacing-4);
+    align-items: flex-end;
+  }
+
+  .modal__dialog {
+    max-width: 100%;
+    max-height: min(92vh, 100%);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .modal__header {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .modal__body {
+    padding: var(--spacing-4);
+  }
+}

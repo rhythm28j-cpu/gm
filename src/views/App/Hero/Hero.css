@@ -36,13 +36,13 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--spacing-24) * 4.5)), 1fr));
-  gap: var(--spacing-12);
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
   align-items: center;
   width: 100%;
   max-width: var(--layout-content-max);
   margin-inline: auto;
-  padding-block: var(--spacing-6);
+  padding-block: var(--spacing-8);
   padding-inline: var(--spacing-6);
 }
 
@@ -50,7 +50,16 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
-  max-width: calc(var(--spacing-24) * 6);
+  order: 0;
+  max-width: none;
+}
+
+.hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: -1;
+  width: 100%;
 }
 
 .hero__badge {
@@ -133,15 +142,10 @@
 }
 
 /* Rotating diamond */
-.hero__visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .hero__diamond {
   position: relative;
-  width: min(var(--layout-hero-visual), 100%);
+  width: min(var(--layout-hero-visual), min(100%, calc(var(--spacing-24) * 4.5)));
+  margin-inline: auto;
   aspect-ratio: 1;
   animation: hero-diamond-spin var(--duration-rotate) linear infinite;
 }
@@ -243,4 +247,65 @@
 .hero__sparkle:nth-child(6) {
   top: 8%;
   right: 28%;
+}
+
+@media (max-width: 47.999rem) {
+  .hero__inner {
+    padding-inline: var(--spacing-4);
+  }
+
+  .hero__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__badge {
+    align-self: center;
+  }
+
+  .hero__actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero__cta-primary,
+  .hero__cta-secondary {
+    flex: 1 1 auto;
+    min-width: min(100%, calc(var(--spacing-24) * 5));
+  }
+
+  .hero__diamond {
+    width: min(100%, calc(var(--spacing-24) * 4.25));
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: var(--spacing-12);
+    padding-block: var(--spacing-6);
+  }
+
+  .hero__content {
+    order: 1;
+    max-width: calc(var(--spacing-24) * 6);
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero__badge {
+    align-self: flex-start;
+  }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+
+  .hero__visual {
+    order: 2;
+  }
+
+  .hero__diamond {
+    width: min(var(--layout-hero-visual), 100%);
+  }
 }

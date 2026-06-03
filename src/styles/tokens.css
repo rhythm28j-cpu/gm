@@ -40,6 +40,9 @@
   /* Layout */
   --layout-content-max: 75rem;
   --layout-hero-visual: calc(var(--spacing-24) * 6);
+  --breakpoint-sm: 30rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
 
   /* Radius */
   --radius-sm: var(--spacing-1);

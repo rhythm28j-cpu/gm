@@ -58,7 +58,7 @@ export default function Hero() {
                 alt=""
                 width={900}
                 height={900}
-                sizes="(max-width: 768px) 90vw, min(36rem, 42vw)"
+                sizes="(max-width: 48rem) min(90vw, 18rem), min(36rem, 42vw)"
                 priority
               />
             </div>

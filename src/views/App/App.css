@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  overflow-x: clip;
   background-color: var(--color-orbital-blue);
   color: var(--token-foreground);
+}
+
+#menu,
+#stellar-savings,
+#our-story {
+  scroll-margin-top: calc(var(--spacing-12) + var(--spacing-2));
 }
