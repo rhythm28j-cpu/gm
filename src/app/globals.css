@@ -2,6 +2,7 @@
 @import "../styles/tokens.css";
 @import "../styles/foundation.css";
 @import "../components/components.css";
+@import "../views/views.css";
 
 @theme inline {
   /* Brand palette */

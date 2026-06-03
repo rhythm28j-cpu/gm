@@ -1,3 +1,8 @@
+import type { StaticImageData } from "next/image";
+import dealBinaryStar from "@/assets/deal-binary-star.jpg";
+import dealSoloExplorer from "@/assets/deal-solo-explorer.jpg";
+import heroPizza from "@/assets/hero-pizza.jpg";
+
 export type Deal = {
   id: string;
   title: string;
@@ -7,7 +12,7 @@ export type Deal = {
   cta: string;
   featured?: boolean;
   badge?: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   imageAlt: string;
 };
 
@@ -20,7 +25,7 @@ export const DEALS: Deal[] = [
       "Two large 3-topping pizzas plus a 2-liter Nebula Nectar. Perfect for pairs.",
     features: ["2 Large Pizzas", "Any 3 Toppings", "Drinks Included"],
     cta: "Claim Offer",
-    imageSrc: "/deal-binary-star.jpg",
+    imageSrc: dealBinaryStar,
     imageAlt: "Pepperoni pizza with a slice being lifted",
   },
   {
@@ -33,7 +38,7 @@ export const DEALS: Deal[] = [
     cta: "Fuel the Crew",
     featured: true,
     badge: "Most Popular",
-    imageSrc: "/hero-pizza.jpg",
+    imageSrc: heroPizza,
     imageAlt: "Classic pepperoni pizza fresh from the oven",
   },
   {
@@ -48,7 +53,7 @@ export const DEALS: Deal[] = [
       "Single Voyager Size",
     ],
     cta: "Claim Offer",
-    imageSrc: "/deal-solo-explorer.jpg",
+    imageSrc: dealSoloExplorer,
     imageAlt: "Single pizza on a wooden board",
   },
 ];

@@ -27,13 +27,13 @@ export const TOPPING_PRICES = {
   cheese: 1,
   olives: 1,
   jalapenos: 0.75,
-  sausage: 1.75,
+  artichokes: 1.75,
   mushrooms: 1.25,
   pineapple: 1,
   bacon: 2,
   onions: 0.75,
   peppers: 1,
-  anchovies: 1.5,
+  broccoli: 1.5,
   basil: 0.5,
   tomatoes: 0.75,
 } as const;
@@ -56,4 +56,8 @@ export function calculatePizzaPrice(selections: CustomizeSelections): number {
 
 export function formatPizzaPrice(price: number): string {
   return priceFormatter.format(price);
+}
+
+export function formatAddonPrice(price: number): string {
+  return `+${formatPizzaPrice(price)}`;
 }

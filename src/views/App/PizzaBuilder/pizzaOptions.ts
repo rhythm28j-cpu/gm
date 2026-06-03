@@ -29,7 +29,7 @@ export const TOPPING_OPTIONS = [
   { id: "cheese", label: "Moon-Dust Cheese" },
   { id: "olives", label: "Black Hole Olives" },
   { id: "jalapenos", label: "Solar Jalapeños" },
-  { id: "sausage", label: "Lunar Sausage" },
+  { id: "artichokes", label: "Galactic Artichokes" },
 ] as const;
 
 export const EXTRA_TOPPING_OPTIONS = [
@@ -38,9 +38,9 @@ export const EXTRA_TOPPING_OPTIONS = [
   { id: "bacon", label: "Bacon Meteor" },
   { id: "onions", label: "Nebula Onions" },
   { id: "peppers", label: "Star Bell Peppers" },
-  { id: "anchovies", label: "Asteroid Anchovies" },
+  { id: "broccoli", label: "Roasted Broccoli" },
   { id: "basil", label: "Fresh Space Basil" },
-  { id: "tomatoes", label: "Sun-Ripened Tomatoes" },
+  { id: "tomatoes", label: "Red Dwarf Tomatoes" },
 ] as const;
 
 export type CrustId =

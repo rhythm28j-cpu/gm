@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
+import heroPizza from "@/assets/hero-pizza.jpg";
 
 const HERO_CONTENT = {
   badge: "Limited time trajectory",
@@ -53,7 +54,7 @@ export default function Hero() {
             <div className="hero__diamond-frame">
               <Image
                 className="hero__diamond-image"
-                src="/hero-pizza.jpg"
+                src={heroPizza}
                 alt=""
                 width={900}
                 height={900}

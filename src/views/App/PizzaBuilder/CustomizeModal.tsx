@@ -1,10 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
+import { TOPPING_IMAGES } from "@/assets/toppingImages";
 import {
   calculatePizzaPrice,
+  formatAddonPrice,
   formatPizzaPrice,
+  TOPPING_PRICES,
 } from "./pizzaPricing";
 import {
   ALL_CRUST_OPTIONS,
@@ -120,21 +124,57 @@ export default function CustomizeModal({
             role="group"
             aria-label="Choose toppings"
           >
-            {ALL_TOPPING_OPTIONS.map((option) => (
-              <button
-                key={option.id}
-                type="button"
-                className={`customize-modal__topping${
-                  selections.toppings.includes(option.id)
-                    ? " customize-modal__topping--selected"
-                    : ""
-                }`}
-                aria-pressed={selections.toppings.includes(option.id)}
-                onClick={() => toggleTopping(option.id)}
-              >
-                {option.label}
-              </button>
-            ))}
+            {ALL_TOPPING_OPTIONS.map((option) => {
+              const image = TOPPING_IMAGES[option.id];
+              const isSelected = selections.toppings.includes(option.id);
+
+              return (
+                <div
+                  key={option.id}
+                  className={`customize-modal__topping-row${
+                    isSelected ? " customize-modal__topping-row--selected" : ""
+                  }`}
+                >
+                  <div className="customize-modal__topping-thumb" aria-hidden="true">
+                    {image ? (
+                      <Image
+                        className="customize-modal__topping-image"
+                        src={image}
+                        alt=""
+                        width={800}
+                        height={533}
+                        sizes="56px"
+                      />
+                    ) : (
+                      <span className="customize-modal__topping-thumb-fallback">
+                        {option.label.charAt(0)}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="customize-modal__topping-info">
+                    <span className="customize-modal__topping-name">
+                      {option.label}
+                    </span>
+                    <span className="customize-modal__topping-price">
+                      {formatAddonPrice(TOPPING_PRICES[option.id])}
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="customize-modal__topping-add"
+                    aria-pressed={isSelected}
+                    aria-label={
+                      isSelected ? `Remove ${option.label}` : `Add ${option.label}`
+                    }
+                    onClick={() => toggleTopping(option.id)}
+                  >
+                    {isSelected ? "✓" : "+"}
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </section>
 
